@@ -21,3 +21,8 @@ To compile:
 3. Open the Xilinx Core Generator and generate the cores for each of the *.xco files found in the `ipcore_dir` folder.
 
 4. Open `SuperLaserLand.xise` in the Xilinx ISE Design Suite and generate the bitfile.
+
+# Source Compilation CAA Aug 2021
+1. Using the Xilinx ISE 14.7 Design Suite (Embedded Edition), the Xilinx Core Generator no longer generates some older versions of the IP core. Namely, the affected cores' upgrade files can be accessed: fifo_w16_4096_r16_4096_upgrade.txt  fifo_w256_128_r64_512_upgrade.txt  fifo_w64_512_r16_2048_upgrade.txt; some parameters have been added (such as AXI4 streaming) - which may or may not break dependancies - will have to see if everything compiles.
+
+2. Opal Kelly HDL files have been added in the OpalKelly_XEM6310-LX150 folder
