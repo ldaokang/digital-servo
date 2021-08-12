@@ -6,7 +6,7 @@
 //
 // 4 Aug 2021
 // Michael Lee: changed from USB 2.0 to USB 3.0 interface for XEM6310 compatibility.
-// - Changed ok Host interface
+// - Changed ok Host interface; added auxillary 32-bit wires which truncate / pad to mate with existing 16-bit wires
 // - Changed interface to flash driver (M25P32 -> N25Q128)
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -120,12 +120,33 @@ wire [15:0] WireOut20, WireOut21, WireOut22, WireOut23, WireOut24, WireOut25;
 wire [15:0] TrigIn40;
 
 ///////////////////////////////////////////////////////////////////////////////
+// Auxillary Opal Kelly Wires for USB 3.0 interface (width of all endpoints is 32 bits)
+// Direct connection may also be possible given Verilog's type insensitivity
+wire [31:0] WireIn00_AUX, WireIn01_AUX, WireIn02_AUX;
+wire [31:0] WireOut20_AUX, WireOut21_AUX, WireOut22_AUX, WireOut23_AUX, WireOut24_AUX, WireOut25_AUX;
+wire [31:0] TrigIn40_AUX;
+
+///////////////////////////////////////////////////////////////////////////////
 // Wires
 wire [15:0] cmd_addr, cmd_data1in, cmd_data2in, cmd_dataout_N25Q128_CONFIG, cmd_dataout_AD9783, cmd_dataout_LTC2195_2, cmd_dataout_LTC2195_1, cmd_dataout_LTC2195_0;
 wire 			cmd_trig;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Assigns
+
+// assign auxillary pins to actual pins (mostly redundant)
+// truncate input pins
+assign WireIn00 = WireIn00_AUX[15:0];
+assign WireIn01 = WireIn01_AUX[15:0];
+assign WireIn02 = WireIn02_AUX[15:0];
+assign TrigIn40 = TrigIn40_AUX[15:0];
+// pad output pins
+assign WireOut20_AUX = {16{1b'0'},WireOut20};
+assign WireOut21_AUX = {16{1b'0'},WireOut21};
+assign WireOut22_AUX = {16{1b'0'},WireOut22};
+assign WireOut23_AUX = {16{1b'0'},WireOut23};
+assign WireOut24_AUX = {16{1b'0'},WireOut24};
+assign WireOut25_AUX = {16{1b'0'},WireOut25};
 
 // redundant pins
 //assign i2c_sda = 1'bz;
@@ -566,23 +587,26 @@ okWireOut   ep25 (.ok1(ok1), .ok2(ok2x[ 5*17 +: 17 ]), .ep_addr(8'h25), .ep_data
 
 okTriggerIn ep40 (.ok1(ok1),                           .ep_addr(8'h40), .ep_clk(clk1), .ep_trigger(TrigIn40));
 */
-// I rely on Verilog's loose types - .ep_dataout/in are 32 bits, while WireIn/Outs and triggers were defined to be 16 bits. I assume that 0's will be padded / first 16 bits will be truncated.
-okWireIn    ep00 (.okHE(okHE),                           .ep_addr(8'h00), .ep_dataout(WireIn00));
-okWireIn    ep01 (.okHE(okHE),                           .ep_addr(8'h01), .ep_dataout(WireIn01));
-okWireIn    ep02 (.okHE(okHE),                           .ep_addr(8'h02), .ep_dataout(WireIn02));
 
-okWireOut   ep20 (.okHE(okHE), .okEH(okEHx[ 0*65 +: 65 ]), .ep_addr(8'h20), .ep_datain(WireOut20));
-okWireOut   ep21 (.okHE(okHE), .okEH(okEHx[ 1*65 +: 65 ]), .ep_addr(8'h21), .ep_datain(WireOut21));
-okWireOut   ep22 (.okHE(okHE), .okEH(okEHx[ 2*65 +: 65 ]), .ep_addr(8'h22), .ep_datain(WireOut22));
-okWireOut   ep23 (.okHE(okHE), .okEH(okEHx[ 3*65 +: 65 ]), .ep_addr(8'h23), .ep_datain(WireOut23));
-okWireOut   ep24 (.okHE(okHE), .okEH(okEHx[ 4*65 +: 65 ]), .ep_addr(8'h24), .ep_datain(WireOut24));
-okWireOut   ep25 (.okHE(okHE), .okEH(okEHx[ 5*65 +: 65 ]), .ep_addr(8'h25), .ep_datain(WireOut25));
+okWireIn    ep00 (.okHE(okHE),                           .ep_addr(8'h00), .ep_dataout(WireIn00_AUX));
+okWireIn    ep01 (.okHE(okHE),                           .ep_addr(8'h01), .ep_dataout(WireIn01_AUX));
+okWireIn    ep02 (.okHE(okHE),                           .ep_addr(8'h02), .ep_dataout(WireIn02_AUX));
 
-okTriggerIn ep40 (.okHE(okHE),                           .ep_addr(8'h40), .ep_clk(clk1), .ep_trigger(TrigIn40));
+okWireOut   ep20 (.okHE(okHE), .okEH(okEHx[ 0*65 +: 65 ]), .ep_addr(8'h20), .ep_datain(WireOut20_AUX));
+okWireOut   ep21 (.okHE(okHE), .okEH(okEHx[ 1*65 +: 65 ]), .ep_addr(8'h21), .ep_datain(WireOut21_AUX));
+okWireOut   ep22 (.okHE(okHE), .okEH(okEHx[ 2*65 +: 65 ]), .ep_addr(8'h22), .ep_datain(WireOut22_AUX));
+okWireOut   ep23 (.okHE(okHE), .okEH(okEHx[ 3*65 +: 65 ]), .ep_addr(8'h23), .ep_datain(WireOut23_AUX));
+okWireOut   ep24 (.okHE(okHE), .okEH(okEHx[ 4*65 +: 65 ]), .ep_addr(8'h24), .ep_datain(WireOut24_AUX));
+okWireOut   ep25 (.okHE(okHE), .okEH(okEHx[ 5*65 +: 65 ]), .ep_addr(8'h25), .ep_datain(WireOut25_AUX));
+
+okTriggerIn ep40 (.okHE(okHE),                           .ep_addr(8'h40), .ep_clk(clk1), .ep_trigger(TrigIn40_AUX));
 
 // FIFO and pipe out for slow streaming data transfer
 wire        	 PipeOutA0Read;
 wire [15:0] 	 PipeOutA0DataOut;
+wire [31:0]		 PipeOutA0DataOut_AUX;
+assign PipeOutA0DataOut_AUX = {16{1b'0'},PipeOutA0DataOut};
+
 fifo_w16_4096_r16_4096 epA0FIFO (
 	.rst(1'b0),
 	.wr_clk(clk1),
@@ -595,11 +619,13 @@ fifo_w16_4096_r16_4096 epA0FIFO (
 	.full(PipeOutA0Full)
 );
 //okPipeOut epA0 (.ok1(ok1), .ok2(ok2x[ 6*17 +: 17 ]), .ep_addr(8'hA0), .ep_datain(PipeOutA0DataOut), .ep_read(PipeOutA0Read));
-okPipeOut epA0 (.okHE(okHE), .okEH(okEHx[ 6*65 +: 65 ]), .ep_addr(8'hA0), .ep_datain(PipeOutA0DataOut), .ep_read(PipeOutA0Read));
+okPipeOut epA0 (.okHE(okHE), .okEH(okEHx[ 6*65 +: 65 ]), .ep_addr(8'hA0), .ep_datain(PipeOutA0DataOut_AUX), .ep_read(PipeOutA0Read));
 
 // FIFO and pipe out for reading data from the RAM
 wire        	 PipeOutA1Read;
 wire [15:0] 	 PipeOutA1DataOut;
+wire [31:0] 	 PipeOutA1DataOut_AUX;
+assign PipeOutA1DataOut_AUX = {16{1b'0'},PipeOutA1DataOut};
 fifo_w64_512_r16_2048 okPipeOut_fifo (
 	.rst(PipeOutA1Reset),
 	.wr_clk(PipeOutA1WriteClock),
@@ -611,6 +637,6 @@ fifo_w64_512_r16_2048 okPipeOut_fifo (
 	.wr_data_count(PipeOutA1Count) // Bus [8 : 0]
 );
 //okPipeOut epA1 (.ok1(ok1), .ok2(ok2x[ 7*17 +: 17 ]), .ep_addr(8'hA1), .ep_read(PipeOutA1Read),   .ep_datain(PipeOutA1DataOut));
-okPipeOut epA1 (.okHE(okHE), .okEH(okEHx[ 7*65 +: 65 ]), .ep_addr(8'hA1), .ep_read(PipeOutA1Read),   .ep_datain(PipeOutA1DataOut));
+okPipeOut epA1 (.okHE(okHE), .okEH(okEHx[ 7*65 +: 65 ]), .ep_addr(8'hA1), .ep_read(PipeOutA1Read),   .ep_datain(PipeOutA1DataOut_AUX));
 
 endmodule
