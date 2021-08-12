@@ -252,11 +252,19 @@ NET "led[5]"     LOC="AB17"   | IOSTANDARD=LVCMOS18;
 NET "led[6]"     LOC="AB16"   | IOSTANDARD=LVCMOS18;
 NET "led[7]"     LOC="AB10"   | IOSTANDARD=LVCMOS18;
 
-# Flash ###############################################################
-NET "flash_scs"  LOC = "T5"   | IOSTANDARD="LVCMOS33";
-NET "flash_sck"  LOC = "W12"  | IOSTANDARD="LVCMOS33";
-NET "flash_sdo"  LOC = "Y15"  | IOSTANDARD="LVCMOS33";
-NET "flash_sdi"  LOC = "AB15" | IOSTANDARD="LVCMOS33";
+# Flash (XEM6010) ###############################################################
+#NET "flash_scs"  LOC = "T5"   | IOSTANDARD="LVCMOS33";
+#NET "flash_sck"  LOC = "W12"  | IOSTANDARD="LVCMOS33";
+#NET "flash_sdo"  LOC = "Y15"  | IOSTANDARD="LVCMOS33";
+#NET "flash_sdi"  LOC = "AB15" | IOSTANDARD="LVCMOS33";
+
+# Flash (XEM6310) ###############################################################
+NET "flash_sdi"         LOC = "W3"   | IOSTANDARD="LVCMOS18"; #dq0
+NET "flash_sck"         LOC = "W1"   | IOSTANDARD="LVCMOS18";
+NET "flash_scs"         LOC = "V3"   | IOSTANDARD="LVCMOS18";
+NET "flash_sdo"         LOC = "T4"   | IOSTANDARD="LVCMOS18"; #dq1
+NET "flash_wprotect"    LOC = "T3"   | IOSTANDARD="LVCMOS18";
+NET "flash_hold"        LOC = "U4"   | IOSTANDARD="LVCMOS18";
 
 # DRAM ################################################################     
 #NET  "ddr2_a[0]"       LOC = "H2" | IOSTANDARD = SSTL18_II;

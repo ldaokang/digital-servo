@@ -7,7 +7,7 @@
 // 4 Aug 2021
 // Michael Lee: changed from USB 2.0 to USB 3.0 interface for XEM6310 compatibility.
 // - Changed ok Host interface
-// - To do: rewrite driver for XEM6310
+// - Changed interface to flash driver (M25P32 -> N25Q128)
 ///////////////////////////////////////////////////////////////////////////////
 
 `include "timescale.v"
@@ -36,6 +36,8 @@ module SuperLaserLand(
 	
 	output wire 		 flash_scs,
 	output wire 		 flash_sck,
+	output wire			 flash_hold,
+	output wire			 flash_wprotect,
 	input  wire 		 flash_sdo,
 	output wire 		 flash_sdi
 	
@@ -119,7 +121,7 @@ wire [15:0] TrigIn40;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Wires
-wire [15:0] cmd_addr, cmd_data1in, cmd_data2in, cmd_dataout_M25P32_CONFIG, cmd_dataout_AD9783, cmd_dataout_LTC2195_2, cmd_dataout_LTC2195_1, cmd_dataout_LTC2195_0;
+wire [15:0] cmd_addr, cmd_data1in, cmd_data2in, cmd_dataout_N25Q128_CONFIG, cmd_dataout_AD9783, cmd_dataout_LTC2195_2, cmd_dataout_LTC2195_1, cmd_dataout_LTC2195_0;
 wire 			cmd_trig;
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -134,7 +136,7 @@ assign cmd_trig = TrigIn40[1];
 assign cmd_addr = WireIn00[15:0];
 assign cmd_data1in = WireIn01[15:0];
 assign cmd_data2in = WireIn02[15:0];
-assign WireOut20 = cmd_dataout_M25P32_CONFIG;
+assign WireOut20 = cmd_dataout_N25Q128_CONFIG;
 assign WireOut21 = cmd_dataout_AD9783;
 assign WireOut22 = cmd_dataout_LTC2195_0;
 assign WireOut23 = cmd_dataout_LTC2195_1;
@@ -209,10 +211,10 @@ end
 wire  [12287:0] configurationNR;
 reg   [12287:0] configuration;
 
-M25P32_CONFIG #(
+N25Q128_CONFIG #(
 	.CONFIG_SIZE(12288)
 )
-M25P32_CONFIG1 (
+N25Q128_CONFIG1 (
 	.clk_in(clk1),
 	.rst_in(rst),
 	.configuration_out(configurationNR),
@@ -220,10 +222,12 @@ M25P32_CONFIG1 (
 	.addr_in(cmd_addr),
 	.data1_in(cmd_data1in),
 	.data2_in(cmd_data2in),
-	.data_out(cmd_dataout_M25P32_CONFIG),
+	.data_out(cmd_dataout_N25Q128_CONFIG),
 	.spi_scs_out(flash_scs),
 	.spi_sck_out(flash_sck),
 	.spi_sdo_out(flash_sdi),
+	.spi_hold_out(flash_hold),
+	.spi_wprotect_out(flash_wprotect),
 	.spi_sdi_in(flash_sdo)
 );
 
