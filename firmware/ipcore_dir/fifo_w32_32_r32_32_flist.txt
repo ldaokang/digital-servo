@@ -1,0 +1,14 @@
+# Output products list for <fifo_w32_32_r32_32>
+fifo_generator_ug175.pdf
+fifo_generator_v8_2_readme.txt
+fifo_w32_32_r32_32.asy
+fifo_w32_32_r32_32.gise
+fifo_w32_32_r32_32.ngc
+fifo_w32_32_r32_32.v
+fifo_w32_32_r32_32.veo
+fifo_w32_32_r32_32.vhd
+fifo_w32_32_r32_32.vho
+fifo_w32_32_r32_32.xco
+fifo_w32_32_r32_32.xise
+fifo_w32_32_r32_32_flist.txt
+fifo_w32_32_r32_32_xmdf.tcl

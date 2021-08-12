@@ -1,0 +1,15 @@
+# Output products list for <fifo_w256_128_r64_512>
+fifo_generator_ug175.pdf
+fifo_generator_v8_2_readme.txt
+fifo_w256_128_r64_512.asy
+fifo_w256_128_r64_512.gise
+fifo_w256_128_r64_512.ngc
+fifo_w256_128_r64_512.v
+fifo_w256_128_r64_512.veo
+fifo_w256_128_r64_512.vhd
+fifo_w256_128_r64_512.vho
+fifo_w256_128_r64_512.xco
+fifo_w256_128_r64_512.xise
+fifo_w256_128_r64_512_flist.txt
+fifo_w256_128_r64_512_upgrade.txt
+fifo_w256_128_r64_512_xmdf.tcl

@@ -1,0 +1,15 @@
+# Output products list for <dds_PG_pw24>
+dds_PG_pw24/doc/dds_compiler_v4_0_vinfo.html
+dds_PG_pw24/doc/dds_ds558.pdf
+dds_PG_pw24.asy
+dds_PG_pw24.gise
+dds_PG_pw24.ngc
+dds_PG_pw24.v
+dds_PG_pw24.veo
+dds_PG_pw24.vhd
+dds_PG_pw24.vho
+dds_PG_pw24.xco
+dds_PG_pw24.xise
+dds_PG_pw24_flist.txt
+dds_PG_pw24_readme.txt
+dds_PG_pw24_xmdf.tcl

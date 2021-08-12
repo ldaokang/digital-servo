@@ -1,0 +1,15 @@
+# Output products list for <dds_LUT_pw24_ow16>
+dds_LUT_pw24_ow16/doc/dds_compiler_v4_0_vinfo.html
+dds_LUT_pw24_ow16/doc/dds_ds558.pdf
+dds_LUT_pw24_ow16.asy
+dds_LUT_pw24_ow16.gise
+dds_LUT_pw24_ow16.ngc
+dds_LUT_pw24_ow16.v
+dds_LUT_pw24_ow16.veo
+dds_LUT_pw24_ow16.vhd
+dds_LUT_pw24_ow16.vho
+dds_LUT_pw24_ow16.xco
+dds_LUT_pw24_ow16.xise
+dds_LUT_pw24_ow16_flist.txt
+dds_LUT_pw24_ow16_readme.txt
+dds_LUT_pw24_ow16_xmdf.tcl

@@ -1,0 +1,15 @@
+# Output products list for <dds_pw32_ow16>
+dds_pw32_ow16/doc/dds_compiler_v4_0_vinfo.html
+dds_pw32_ow16/doc/dds_ds558.pdf
+dds_pw32_ow16.asy
+dds_pw32_ow16.gise
+dds_pw32_ow16.ngc
+dds_pw32_ow16.v
+dds_pw32_ow16.veo
+dds_pw32_ow16.vhd
+dds_pw32_ow16.vho
+dds_pw32_ow16.xco
+dds_pw32_ow16.xise
+dds_pw32_ow16_flist.txt
+dds_pw32_ow16_readme.txt
+dds_pw32_ow16_xmdf.tcl

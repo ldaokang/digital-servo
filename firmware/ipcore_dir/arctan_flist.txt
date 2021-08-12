@@ -1,0 +1,15 @@
+# Output products list for <arctan>
+arctan/doc/cordic_ds249.pdf
+arctan/doc/cordic_v4_0_vinfo.html
+arctan.asy
+arctan.gise
+arctan.ngc
+arctan.v
+arctan.veo
+arctan.vhd
+arctan.vho
+arctan.xco
+arctan.xise
+arctan_flist.txt
+arctan_readme.txt
+arctan_xmdf.tcl
