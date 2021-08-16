@@ -1,0 +1,549 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: SuperLaserLand.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SuperLaserLand.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SuperLaserLand"
+Output Format                      : NGC
+Target Device                      : xc6slx150-2-fgg484
+
+---- Source Options
+Top Module Name                    : SuperLaserLand
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : Yes
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Move First FlipFlop Stage          : YES
+Move Last FlipFlop Stage           : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : True
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 2
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/mig/iodrp_mcb_controller.v" into library work
+Parsing module <iodrp_mcb_controller>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/mig/iodrp_controller.v" into library work
+Parsing module <iodrp_controller>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" into library work
+Parsing module <mcb_soft_calibration>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration_top.v" into library work
+Parsing module <mcb_soft_calibration_top>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/mig/mcb_raw_wrapper.v" into library work
+Parsing module <mcb_raw_wrapper>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ipcore_dir/div_32_16.v" into library work
+Parsing module <div_32_16>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/SPI.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <SPI>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/MinMaxMean.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <MinMaxMean>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/mig/memc3_wrapper.v" into library work
+Parsing module <memc3_wrapper>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/mig/memc3_infrastructure.v" into library work
+Parsing module <memc3_infrastructure>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/LPfilter.v" into library work
+Parsing verilog file "timescale.v" included at line 20.
+Parsing module <LPfilter>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ipcore_dir/multiplier35x35.v" into library work
+Parsing module <multiplier35x35>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ipcore_dir/fifo_w256_128_r64_512.v" into library work
+Parsing module <fifo_w256_128_r64_512>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ipcore_dir/dds_pw32_ow24.v" into library work
+Parsing module <dds_pw32_ow24>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ipcore_dir/dds_pw32_ow16.v" into library work
+Parsing module <dds_pw32_ow16>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ipcore_dir/dds_PG_pw24.v" into library work
+Parsing module <dds_PG_pw24>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ipcore_dir/dds_LUT_pw24_ow24.v" into library work
+Parsing module <dds_LUT_pw24_ow24>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ipcore_dir/dds_LUT_pw24_ow16.v" into library work
+Parsing module <dds_LUT_pw24_ow16>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ipcore_dir/arctan.v" into library work
+Parsing module <arctan>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ddr2_controller.v" into library work
+Parsing module <ddr2_controller>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/TransferFunction.v" into library work
+Parsing verilog file "timescale.v" included at line 14.
+Parsing module <TransferFunction>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/Sweep.v" into library work
+Parsing verilog file "timescale.v" included at line 13.
+Parsing module <Sweep>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/Relock.v" into library work
+Parsing verilog file "timescale.v" included at line 13.
+Parsing module <Relock>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/PhaseDetector.v" into library work
+Parsing verilog file "timescale.v" included at line 12.
+Parsing module <PhaseDetector>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/OpalKelly_XEM6310-LX150/okLibrary.v" into library work
+Parsing module <okHost>.
+Parsing module <okCoreHarness>.
+Parsing module <okWireIn>.
+Parsing module <okWireOut>.
+Parsing module <okTriggerIn>.
+Parsing module <okTriggerOut>.
+Parsing module <okPipeIn>.
+Parsing module <okPipeOut>.
+Parsing module <okBTPipeIn>.
+Parsing module <okBTPipeOut>.
+Parsing module <okRegisterBridge>.
+Parsing module <okWireOR>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/N25Q128_CONFIG.v" into library work
+Parsing verilog file "timescale.v" included at line 22.
+Parsing module <N25Q128_CONFIG>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/LTC2195.v" into library work
+Parsing module <LTC2195>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/Logger.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <Logger>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/LockIn.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <LockIn>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/Limit.v" into library work
+Parsing verilog file "timescale.v" included at line 14.
+Parsing module <Limit>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ipcore_dir/fifo_w64_512_r16_2048.v" into library work
+Parsing module <fifo_w64_512_r16_2048>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/ipcore_dir/fifo_w16_4096_r16_4096.v" into library work
+Parsing module <fifo_w16_4096_r16_4096>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/IIRfilter2ndOrderSlowAntiWindup.v" into library work
+Parsing verilog file "timescale.v" included at line 18.
+Parsing module <IIRfilter2ndOrderSlowAntiWindup>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/IIRfilter2ndOrderSlow.v" into library work
+Parsing verilog file "timescale.v" included at line 18.
+Parsing module <IIRfilter2ndOrderSlow>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/IIRfilter1stOrderAntiWindup.v" into library work
+Parsing verilog file "timescale.v" included at line 17.
+Parsing module <IIRfilter1stOrderAntiWindup>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/IIRfilter1stOrder.v" into library work
+Parsing verilog file "timescale.v" included at line 17.
+Parsing module <IIRfilter1stOrder>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/DigitalDelay.v" into library work
+Parsing verilog file "timescale.v" included at line 14.
+Parsing module <DigitalDelay>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/DDR2Logger.v" into library work
+Parsing verilog file "timescale.v" included at line 14.
+Parsing module <DDR2Logger>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/AD9783.v" into library work
+Parsing module <AD9783>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/AD8251x2.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <AD8251x2>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/AD5791.v" into library work
+Parsing verilog file "timescale.v" included at line 11.
+Parsing module <AD5791>.
+Analyzing Verilog file "/home/cqt/digital-servo/firmware/SuperLaserLand_USB3.v" into library work
+Parsing verilog file "timescale.v" included at line 13.
+Parsing module <SuperLaserLand>.
+Parsing verilog file "SuperLaserLand_CONFIG_SIMPLEPI.v" included at line 528.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:1016 - "/home/cqt/digital-servo/firmware/SuperLaserLand_USB3.v" Line 629: Port full is not connected to this instance
+
+Elaborating module <SuperLaserLand>.
+
+Elaborating module <IBUFGDS>.
+
+Elaborating module <BUFG>.
+
+Elaborating module <SRL16(INIT=16'b1111111111111111)>.
+
+Elaborating module <N25Q128_CONFIG(CONFIG_SIZE=12288)>.
+
+Elaborating module <Logger>.
+
+Elaborating module <MinMaxMean(N_INPUTS=6)>.
+
+Elaborating module <div_32_16>.
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/MinMaxMean.v" Line 60: Assignment to DIVrfd ignored, since the identifier is never used
+WARNING:HDLCompiler:1016 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 205: Port selfrefresh_enter is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 373: Port full is not connected to this instance
+
+Elaborating module <DDR2Logger>.
+ERROR:HDLCompiler:597 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 183: Module memc3_infrastructure does not have a parameter named C_CLKOUT0_DIVIDE
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:597"
+ERROR:HDLCompiler:597 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 184: Module memc3_infrastructure does not have a parameter named C_CLKOUT1_DIVIDE
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:597"
+ERROR:HDLCompiler:597 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 185: Module memc3_infrastructure does not have a parameter named C_CLKOUT2_DIVIDE
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:597"
+ERROR:HDLCompiler:597 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 186: Module memc3_infrastructure does not have a parameter named C_CLKOUT3_DIVIDE
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:597"
+ERROR:HDLCompiler:597 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 187: Module memc3_infrastructure does not have a parameter named C_CLKFBOUT_MULT
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:597"
+ERROR:HDLCompiler:597 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 188: Module memc3_infrastructure does not have a parameter named C_DIVCLK_DIVIDE
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:597"
+
+Elaborating module <memc3_infrastructure(C_MEMCLK_PERIOD=3200,C_RST_ACT_LOW=0,C_INPUT_CLK_TYPE="DIFFERENTIAL")>.
+
+Elaborating module <PLL_ADV(BANDWIDTH="OPTIMIZED",CLKIN1_PERIOD=10,CLKIN2_PERIOD=10,CLKOUT0_DIVIDE=1,CLKOUT1_DIVIDE=1,CLKOUT2_DIVIDE=4,CLKOUT3_DIVIDE=8,CLKOUT4_DIVIDE=1,CLKOUT5_DIVIDE=1,CLKOUT0_PHASE=0.0,CLKOUT1_PHASE=180.0,CLKOUT2_PHASE=0.0,CLKOUT3_PHASE=0.0,CLKOUT4_PHASE=0.0,CLKOUT5_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT2_DUTY_CYCLE=0.5,CLKOUT3_DUTY_CYCLE=0.5,CLKOUT4_DUTY_CYCLE=0.5,CLKOUT5_DUTY_CYCLE=0.5,COMPENSATION="INTERNAL",DIVCLK_DIVIDE=4,CLKFBOUT_MULT=25,CLKFBOUT_PHASE=0.0,REF_JITTER=0.005)>.
+
+Elaborating module <BUFPLL_MCB>.
+
+Elaborating module
+<memc3_wrapper(C_MEMCLK_PERIOD=3200,C_CALIB_SOFT_IP="TRUE",C_SIMULATION="FALSE",C_ARB_NUM_TIME_SLOTS=12,C_ARB_TIME_SLOT_0=3'b0,C_ARB_TIME_SLOT_1=3'b0,C_ARB_TIME_SLOT_2=3'b0,C_ARB_TIME_SLOT_3=3'b0,C_ARB_TIME_SLOT_4=3'b0,C_ARB_TIME_SLOT_5=3'b0,C_ARB_TIME_SLOT_6=3'b0,C_ARB_TIME_SLOT_7=3'b0,C_ARB_TIME_SLOT_8=3'b0,C_ARB_TIME_SLOT_9=3'b0,C_ARB_TIME_SLOT_10=3'b0,C_ARB_TIME_SLOT_11=3'b0,C_MEM_TRAS=40000,C_MEM_TRCD=15000,C_MEM_TREFI=7800000,C_MEM_TRFC=127500,C_MEM_TRP=15000,C_MEM_TWR=15000,C_MEM_TRTP=7500,C_MEM_TWTR=7500,C_MEM_ADDR_ORDER="ROW_BANK_COLUMN",C_NUM_DQ_PINS=16,C_MEM_TYPE="DDR2",C_MEM_DENSITY="1Gb",C_MEM_BURST_LEN=4,C_MEM_CAS_LATENCY=5,C_MEM_ADDR_WIDTH=13,C_MEM_BANKADDR_WIDTH=3,C_MEM_NUM_COL_BITS=10,C_MEM_DDR1_2_ODS="FULL",C_MEM_DDR2_RTT="50OHMS",C_MEM_DDR2_DIFF_DQS_EN="YES",C_MEM_DDR2_3_PA_SR="FULL",C_MEM_DDR2_3_HIGH_TEMP_SR="NORMAL",C_MEM_DDR3_CAS_LATENCY=6,C_MEM_DDR3_ODS="DIV6",C_MEM_DDR3_RTT="DIV2",C_MEM_DDR3_CAS_WR_LATENCY=5,C_MEM_DDR3_AUTO_SR="ENABLED",C_MEM_DDR3_DYN_WRT_ODT="OFF",C_MEM_MOBILE_PA_SR="
+FULL",C_MEM_MDDR_ODS="FULL",C_MC_CALIB_BYPASS="NO",C_MC_CALIBRATION_MODE="CALIBRATION",C_MC_CALIBRATION_DELAY="HALF",C_SKIP_IN_TERM_CAL=0,C_SKIP_DYNAMIC_CAL=0,C_LDQSP_TAP_DELAY_VAL=0,C_LDQSN_TAP_DELAY_VAL=0,C_UDQSP_TAP_DELAY_VAL=0,C_UDQSN_TAP_DELAY_VAL=0,C_DQ0_TAP_DELAY_VAL=0,C_DQ1_TAP_DELAY_VAL=0,C_DQ2_TAP_DELAY_VAL=0,C_DQ3_TAP_DELAY_VAL=0,C_DQ4_TAP_DELAY_VAL=0,C_DQ5_TAP_DELAY_VAL=0,C_DQ6_TAP_DELAY_VAL=0,C_DQ7_TAP_DELAY_VAL=0,C_DQ8_TAP_DELAY_VAL=0,C_DQ9_TAP_DELAY_VAL=0,C_DQ10_TAP_DELAY_VAL=0,C_DQ11_TAP_DELAY_VAL=0,C_DQ12_TAP_DELAY_VAL=0,C_DQ13_TAP_DELAY_VAL=0,C_DQ14_TAP_DELAY_VAL=0,C_DQ15_TAP_DELAY_VAL=0)>.
+WARNING:HDLCompiler:1016 - "/home/cqt/digital-servo/firmware/mig/mcb_raw_wrapper.v" Line 6346: Port BUSY is not connected to this instance
+
+Elaborating module
+<mcb_raw_wrapper(C_MEMCLK_PERIOD=3200,C_P0_MASK_SIZE=4,C_P0_DATA_PORT_SIZE=32,C_P1_MASK_SIZE=4,C_P1_DATA_PORT_SIZE=32,C_ARB_NUM_TIME_SLOTS=12,C_ARB_TIME_SLOT_0=18'b111111111111111000,C_ARB_TIME_SLOT_1=18'b111111111111111000,C_ARB_TIME_SLOT_2=18'b111111111111111000,C_ARB_TIME_SLOT_3=18'b111111111111111000,C_ARB_TIME_SLOT_4=18'b111111111111111000,C_ARB_TIME_SLOT_5=18'b111111111111111000,C_ARB_TIME_SLOT_6=18'b111111111111111000,C_ARB_TIME_SLOT_7=18'b111111111111111000,C_ARB_TIME_SLOT_8=18'b111111111111111000,C_ARB_TIME_SLOT_9=18'b111111111111111000,C_ARB_TIME_SLOT_10=18'b111111111111111000,C_ARB_TIME_SLOT_11=18'b111111111111111000,C_PORT_CONFIG="B32_B32_R32_R32_R32_R32",C_PORT_ENABLE=6'b01,C_MEM_TRAS=40000,C_MEM_TRCD=15000,C_MEM_TREFI=7800000,C_MEM_TRFC=127500,C_MEM_TRP=15000,C_MEM_TWR=15000,C_MEM_TRTP=7500,C_MEM_TWTR=7500,C_MEM_ADDR_ORDER="ROW_BANK_COLUMN",C_NUM_DQ_PINS=16,C_MEM_TYPE="DDR2",C_MEM_DENSITY="1Gb",C_MEM_BURST_LEN=4,C_MEM_CAS_LATENCY=5,C_MEM_ADDR_WIDTH=13,C_MEM_BANKADDR_WIDTH=3,C_MEM_NUM_COL_BITS=10
+,C_MEM_DDR1_2_ODS="FULL",C_MEM_DDR2_RTT="50OHMS",C_MEM_DDR2_DIFF_DQS_EN="YES",C_MEM_DDR2_3_PA_SR="FULL",C_MEM_DDR2_3_HIGH_TEMP_SR="NORMAL",C_MEM_DDR3_CAS_LATENCY=6,C_MEM_DDR3_ODS="DIV6",C_MEM_DDR3_RTT="DIV2",C_MEM_DDR3_CAS_WR_LATENCY=5,C_MEM_DDR3_AUTO_SR="ENABLED",C_MEM_DDR3_DYN_WRT_ODT="OFF",C_MEM_MOBILE_PA_SR="FULL",C_MEM_MDDR_ODS="FULL",C_MC_CALIBRATION_CLK_DIV=1,C_MC_CALIBRATION_MODE="CALIBRATION",C_MC_CALIBRATION_DELAY="HALF",C_MC_CALIB_BYPASS="NO",C_MC_CALIBRATION_RA=16'b0,C_MC_CALIBRATION_BA=4'b0,C_MC_CALIBRATION_CA=12'b0,C_CALIB_SOFT_IP="TRUE",C_SKIP_IN_TERM_CAL=0,C_SKIP_DYNAMIC_CAL=0,C_MEM_TZQINIT_MAXCNT=10'b1000000000,C_SKIP_DYN_IN_TERM=1'b1,C_SIMULATION="FALSE",LDQSP_TAP_DELAY_VAL=0,UDQSP_TAP_DELAY_VAL=0,LDQSN_TAP_DELAY_VAL=0,UDQSN_TAP_DELAY_VAL=0,DQ0_TAP_DELAY_VAL=0,DQ1_TAP_DELAY_VAL=0,DQ2_TAP_DELAY_VAL=0,DQ3_TAP_DELAY_VAL=0,DQ4_TAP_DELAY_VAL=0,DQ5_TAP_DELAY_VAL=0,DQ6_TAP_DELAY_VAL=0,DQ7_TAP_DELAY_VAL=0,DQ8_TAP_DELAY_VAL=0,DQ9_TAP_DELAY_VAL=0,DQ10_TAP_DELAY_VAL=0,DQ11_TAP_DELAY_VAL=0,DQ12_TAP_DELA
+Y_VAL=0,DQ13_TAP_DELAY_VAL=0,DQ14_TAP_DELAY_VAL=0,DQ15_TAP_DELAY_VAL=0)>.
+WARNING:HDLCompiler:872 - "/home/cqt/digital-servo/firmware/mig/mcb_raw_wrapper.v" Line 685: Using initial value of allzero since it is never assigned
+
+Elaborating module
+<MCB(PORT_CONFIG="B32_B32_R32_R32_R32_R32",MEM_WIDTH=16,MEM_TYPE="DDR2",MEM_BURST_LEN=4,MEM_ADDR_ORDER="ROW_BANK_COLUMN",MEM_CAS_LATENCY=5,MEM_DDR3_CAS_LATENCY=6,MEM_DDR2_WRT_RECOVERY=32'sb0101,MEM_DDR3_WRT_RECOVERY=5,MEM_MOBILE_PA_SR="FULL",MEM_DDR1_2_ODS="FULL",MEM_DDR3_ODS="DIV6",MEM_DDR2_RTT="50OHMS",MEM_DDR3_RTT="DIV2",MEM_DDR3_ADD_LATENCY="OFF",MEM_DDR2_ADD_LATENCY=0,MEM_MOBILE_TC_SR=0,MEM_MDDR_ODS="FULL",MEM_DDR2_DIFF_DQS_EN="YES",MEM_DDR2_3_PA_SR="FULL",MEM_DDR3_CAS_WR_LATENCY=5,MEM_DDR3_AUTO_SR="ENABLED",MEM_DDR2_3_HIGH_TEMP_SR="NORMAL",MEM_DDR3_DYN_WRT_ODT="OFF",MEM_RA_SIZE=13,MEM_BA_SIZE=3,MEM_CA_SIZE=10,MEM_RAS_VAL=32'sb01101,MEM_RCD_VAL=32'sb0101,MEM_REFI_VAL=32'sb0100110000110,MEM_RFC_VAL=32'sb0101000,MEM_RP_VAL=32'sb0101,MEM_WR_VAL=32'sb0101,MEM_RTP_VAL=32'sb011,MEM_WTR_VAL=32'sb011,CAL_BYPASS="NO",CAL_RA=16'b0,CAL_BA=4'b0,CAL_CA=12'b0,CAL_CLK_DIV=1,CAL_DELAY="HALF",ARB_NUM_TIME_SLOTS=12,ARB_TIME_SLOT_0=18'b111111111111111000,ARB_TIME_SLOT_1=18'b111111111111111000,ARB_TIME_SLOT_2=18'b1111111111
+11111000,ARB_TIME_SLOT_3=18'b111111111111111000,ARB_TIME_SLOT_4=18'b111111111111111000,ARB_TIME_SLOT_5=18'b111111111111111000,ARB_TIME_SLOT_6=18'b111111111111111000,ARB_TIME_SLOT_7=18'b111111111111111000,ARB_TIME_SLOT_8=18'b111111111111111000,ARB_TIME_SLOT_9=18'b111111111111111000,ARB_TIME_SLOT_10=18'b111111111111111000,ARB_TIME_SLOT_11=18'b111111111111111000)>.
+
+Elaborating module <mcb_soft_calibration_top(C_MEM_TZQINIT_MAXCNT=10'b1000000000,C_MC_CALIBRATION_MODE="CALIBRATION",SKIP_IN_TERM_CAL=0,SKIP_DYNAMIC_CAL=0,SKIP_DYN_IN_TERM=1'b1,C_SIMULATION="FALSE",C_MEM_TYPE="DDR2")>.
+
+Elaborating module <mcb_soft_calibration(C_MEM_TZQINIT_MAXCNT=10'b1000000000,C_MC_CALIBRATION_MODE="CALIBRATION",SKIP_IN_TERM_CAL=0,SKIP_DYNAMIC_CAL=0,SKIP_DYN_IN_TERM=1'b1,C_SIMULATION="FALSE",C_MEM_TYPE="DDR2")>.
+WARNING:HDLCompiler:872 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" Line 312: Using initial value of START_BROADCAST since it is never assigned
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" Line 373: Assignment to Half_MV_DU ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" Line 375: Assignment to Half_MV_DD ignored, since the identifier is never used
+
+Elaborating module <iodrp_controller>.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/mig/iodrp_controller.v" Line 186: Result of 4-bit expression is truncated to fit in 3-bit target.
+
+Elaborating module <iodrp_mcb_controller>.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/mig/iodrp_mcb_controller.v" Line 301: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/mig/iodrp_mcb_controller.v" Line 312: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" Line 408: Assignment to MCB_READ_DATA ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" Line 654: Assignment to MCB_UODATAVALID_U ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" Line 809: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" Line 813: Result of 8-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" Line 859: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" Line 863: Result of 8-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" Line 864: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration.v" Line 700: Assignment to IODRPCTRLR_USE_BKST ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/mcb_soft_calibration_top.v" Line 216: Assignment to Max_Value ignored, since the identifier is never used
+
+Elaborating module <IOBUF>.
+
+Elaborating module <IODRP2>.
+
+Elaborating module <OSERDES2(BYPASS_GCLK_FF="TRUE",DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",OUTPUT_MODE="SINGLE_ENDED",SERDES_MODE="MASTER",DATA_WIDTH=2)>.
+
+Elaborating module <OSERDES2(BYPASS_GCLK_FF="TRUE",DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",OUTPUT_MODE="SINGLE_ENDED",SERDES_MODE="MASTER",DATA_WIDTH=2,TRAIN_PATTERN=15)>.
+
+Elaborating module <OSERDES2(BYPASS_GCLK_FF="TRUE",DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",OUTPUT_MODE="SINGLE_ENDED",SERDES_MODE="MASTER",DATA_WIDTH=2,TRAIN_PATTERN=5)>.
+
+Elaborating module <OSERDES2(BYPASS_GCLK_FF="TRUE",DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",OUTPUT_MODE="SINGLE_ENDED",SERDES_MODE="SLAVE",DATA_WIDTH=2)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=7,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=7,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=6,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=6,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=14,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=14,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=5,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=5,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=4,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=4,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=0,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=0,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=1,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=1,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=15,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=15,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=3,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=3,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=2,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=2,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=8,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=8,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODELAY2(ODELAY_VALUE=0,DELAY_SRC="ODATAIN",SIM_TAPDELAY_VALUE=50)>.
+
+Elaborating module <OBUFT>.
+
+Elaborating module <OBUFTDS>.
+
+Elaborating module <IOBUFDS>.
+
+Elaborating module <PULLDOWN>.
+
+Elaborating module <PULLUP>.
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/memc3_wrapper.v" Line 411: Assignment to uo_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/memc3_wrapper.v" Line 412: Assignment to uo_data_valid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/memc3_wrapper.v" Line 414: Assignment to uo_cmd_ready_in ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/memc3_wrapper.v" Line 415: Assignment to uo_refrsh_flag ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/memc3_wrapper.v" Line 416: Assignment to uo_cal_start ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/memc3_wrapper.v" Line 417: Assignment to uo_sdo ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/mig/memc3_wrapper.v" Line 418: Assignment to status ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 312: Assignment to c3_p0_cmd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 319: Assignment to c3_p0_wr_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 320: Assignment to c3_p0_wr_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 321: Assignment to c3_p0_wr_underrun ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 322: Assignment to c3_p0_wr_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 326: Assignment to c3_p0_rd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 328: Assignment to c3_p0_rd_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 329: Assignment to c3_p0_rd_overflow ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 330: Assignment to c3_p0_rd_error ignored, since the identifier is never used
+
+Elaborating module <ddr2_controller>.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/ddr2_controller.v" Line 93: Result of 12-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/ddr2_controller.v" Line 94: Result of 32-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/ddr2_controller.v" Line 119: Result of 32-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/ddr2_controller.v" Line 137: Result of 31-bit expression is truncated to fit in 30-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/ddr2_controller.v" Line 144: Result of 31-bit expression is truncated to fit in 30-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/ddr2_controller.v" Line 168: Result of 32-bit expression is truncated to fit in 6-bit target.
+
+Elaborating module <fifo_w256_128_r64_512>.
+WARNING:HDLCompiler:1499 - "/home/cqt/digital-servo/firmware/ipcore_dir/fifo_w256_128_r64_512.v" Line 39: Empty module <fifo_w256_128_r64_512> remains a black box.
+WARNING:HDLCompiler:552 - "/home/cqt/digital-servo/firmware/DDR2Logger.v" Line 279: Input port selfrefresh_enter is not connected on this instance
+
+Elaborating module <AD8251x2>.
+WARNING:HDLCompiler:1016 - "/home/cqt/digital-servo/firmware/LTC2195.v" Line 208: Port CLK270 is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/cqt/digital-servo/firmware/LTC2195.v" Line 317: Port CLKFBOUT is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/cqt/digital-servo/firmware/LTC2195.v" Line 338: Port LOCK is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/cqt/digital-servo/firmware/LTC2195.v" Line 417: Port CFB0 is not connected to this instance
+
+Elaborating module <LTC2195>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=1,CLKFX_MULTIPLY=4,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=10.0,CLKOUT_PHASE_SHIFT="VARIABLE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+
+Elaborating module <ODDR2(DDR_ALIGNMENT="C0",INIT=1'b0,SRTYPE="ASYNC")>.
+
+Elaborating module <OBUFDS(IOSTANDARD="LVDS_25")>.
+
+Elaborating module <IBUFDS(IOSTANDARD="LVDS_33")>.
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/LTC2195.v" Line 276: Assignment to DCO_in ignored, since the identifier is never used
+
+Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKOUT0",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=4,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=1,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKIN_PERIOD=10.0,REF_JITTER=0.01)>.
+
+Elaborating module <BUFPLL(DIVIDE=4,ENABLE_SYNC="TRUE")>.
+
+Elaborating module <IBUFDS(DIFF_TERM="TRUE",IOSTANDARD="LVDS_33")>.
+
+Elaborating module <IODELAY2(DATA_RATE="SDR",IDELAY_VALUE=32'sb0110010,IDELAY_TYPE="FIXED",COUNTER_WRAPAROUND="STAY_AT_LIMIT",DELAY_SRC="IDATAIN",SERDES_MODE="NONE",SIM_TAPDELAY_VALUE=75)>.
+
+Elaborating module <ISERDES2(BITSLIP_ENABLE="FALSE",DATA_RATE="SDR",DATA_WIDTH=4,INTERFACE_TYPE="RETIMED",SERDES_MODE="NONE")>.
+
+Elaborating module <IODELAY2(DATA_RATE="SDR",IDELAY_VALUE=32'sb0110100,IDELAY_TYPE="FIXED",COUNTER_WRAPAROUND="STAY_AT_LIMIT",DELAY_SRC="IDATAIN",SERDES_MODE="NONE",SIM_TAPDELAY_VALUE=75)>.
+
+Elaborating module <SPI(TRANSFER_SIZE=16,SPI_CLK_DIV=8'b0101)>.
+
+Elaborating module <IIRfilter1stOrder(SIGNAL_IN_SIZE=16,SIGNAL_OUT_SIZE=24)>.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/IIRfilter1stOrder.v" Line 41: Result of 44-bit expression is truncated to fit in 35-bit target.
+WARNING:HDLCompiler:1016 - "/home/cqt/digital-servo/firmware/AD9783.v" Line 59: Port CLKFBOUT is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/cqt/digital-servo/firmware/AD9783.v" Line 80: Port LOCK is not connected to this instance
+
+Elaborating module <AD9783(SMP_DLY=8'b01101)>.
+
+Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKOUT0",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=8,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=1,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKIN_PERIOD=10.0,REF_JITTER=0.01)>.
+
+Elaborating module <BUFPLL(DIVIDE=8,ENABLE_SYNC="TRUE")>.
+
+Elaborating module <OSERDES2(DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",TRAIN_PATTERN=0,DATA_WIDTH=8,SERDES_MODE="MASTER",OUTPUT_MODE="SINGLE_ENDED")>.
+
+Elaborating module <OSERDES2(DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",TRAIN_PATTERN=0,DATA_WIDTH=8,SERDES_MODE="SLAVE",OUTPUT_MODE="SINGLE_ENDED")>.
+
+Elaborating module <IODELAY2(DATA_RATE="DDR",ODELAY_VALUE=32'sb011,COUNTER_WRAPAROUND="STAY_AT_LIMIT",DELAY_SRC="ODATAIN",SERDES_MODE="NONE",SIM_TAPDELAY_VALUE=75)>.
+
+Elaborating module <IODELAY2(DATA_RATE="DDR",ODELAY_VALUE=32'sb010,COUNTER_WRAPAROUND="STAY_AT_LIMIT",DELAY_SRC="ODATAIN",SERDES_MODE="NONE",SIM_TAPDELAY_VALUE=75)>.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/AD9783.v" Line 379: Result of 12-bit expression is truncated to fit in 8-bit target.
+
+Elaborating module <AD5791>.
+
+Elaborating module <SPI(TRANSFER_SIZE=24,SPI_CLK_DIV=8'b010,SPI_POLARITY=1'b0)>.
+WARNING:HDLCompiler:189 - "/home/cqt/digital-servo/firmware/AD5791.v" Line 42: Size mismatch in connection of port <data_out>. Formal port size is 24-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "/home/cqt/digital-servo/firmware/AD5791.v" Line 42: Assignment to cmd_data_out ignored, since the identifier is never used
+
+Elaborating module <IIRfilter2ndOrderSlow(SIGNAL_IN_SIZE=24,SIGNAL_OUT_SIZE=16)>.
+
+Elaborating module <multiplier35x35>.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/IIRfilter2ndOrderSlow.v" Line 169: Result of 38-bit expression is truncated to fit in 35-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/IIRfilter2ndOrderSlow.v" Line 170: Result of 38-bit expression is truncated to fit in 35-bit target.
+
+Elaborating module <LockIn>.
+
+Elaborating module <dds_PG_pw24>.
+
+Elaborating module <dds_LUT_pw24_ow24>.
+
+Elaborating module <dds_LUT_pw24_ow16>.
+
+Elaborating module <IIRfilter2ndOrderSlow(SIGNAL_IN_SIZE=32,SIGNAL_OUT_SIZE=24)>.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/IIRfilter2ndOrderSlow.v" Line 169: Result of 38-bit expression is truncated to fit in 35-bit target.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/IIRfilter2ndOrderSlow.v" Line 170: Result of 38-bit expression is truncated to fit in 35-bit target.
+
+Elaborating module <PhaseDetector(PHASE_OUT_SIZE=32)>.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/PhaseDetector.v" Line 163: Result of 34-bit expression is truncated to fit in 32-bit target.
+
+Elaborating module <dds_pw32_ow16>.
+
+Elaborating module <LPfilter(SIGNAL_IN_SIZE=32,SIGNAL_OUT_SIZE=32)>.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/LPfilter.v" Line 40: Result of 38-bit expression is truncated to fit in 35-bit target.
+
+Elaborating module <arctan>.
+WARNING:HDLCompiler:413 - "SuperLaserLand_CONFIG_SIMPLEPI.v" Line 112: Result of 32-bit expression is truncated to fit in 24-bit target.
+
+Elaborating module <TransferFunction>.
+
+Elaborating module <dds_pw32_ow24>.
+
+Elaborating module <Sweep(SIGNAL_OUT_SIZE=24)>.
+
+Elaborating module <DigitalDelay>.
+
+Elaborating module <IIRfilter2ndOrderSlowAntiWindup(SIGNAL_IN_SIZE=24,SIGNAL_OUT_SIZE=24)>.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/IIRfilter2ndOrderSlowAntiWindup.v" Line 226: Result of 44-bit expression is truncated to fit in 35-bit target.
+
+Elaborating module <IIRfilter1stOrderAntiWindup(SIGNAL_IN_SIZE=24,SIGNAL_OUT_SIZE=24)>.
+WARNING:HDLCompiler:413 - "/home/cqt/digital-servo/firmware/IIRfilter1stOrderAntiWindup.v" Line 40: Result of 44-bit expression is truncated to fit in 35-bit target.
+
+Elaborating module <Relock(SIGNAL_OUT_SIZE=24)>.
+
+Elaborating module <Limit(SIGNAL_IN_SIZE=24,SIGNAL_OUT_SIZE=24)>.
+WARNING:HDLCompiler:1016 - "/home/cqt/digital-servo/firmware/OpalKelly_XEM6310-LX150/okLibrary.v" Line 39: Port CLK180 is not connected to this instance
+
+Elaborating module <okHost>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <DCM_SP(CLKIN_PERIOD=9.92,CLKOUT_PHASE_SHIFT="FIXED",PHASE_SHIFT="-32",CLK_FEEDBACK="1X",DESKEW_ADJUST="SOURCE_SYNCHRONOUS",STARTUP_WAIT="FALSE")>.
+
+Elaborating module <FDRE>.
+
+Elaborating module <okCoreHarness>.
+
+Elaborating module <okWireOR(N=8)>.
+
+Elaborating module <okWireIn>.
+
+Elaborating module <okWireOut>.
+
+Elaborating module <okTriggerIn>.
+
+Elaborating module <fifo_w16_4096_r16_4096>.
+WARNING:HDLCompiler:1499 - "/home/cqt/digital-servo/firmware/ipcore_dir/fifo_w16_4096_r16_4096.v" Line 39: Empty module <fifo_w16_4096_r16_4096> remains a black box.
+
+Elaborating module <okPipeOut>.
+
+Elaborating module <fifo_w64_512_r16_2048>.
+WARNING:HDLCompiler:1499 - "/home/cqt/digital-servo/firmware/ipcore_dir/fifo_w64_512_r16_2048.v" Line 39: Empty module <fifo_w64_512_r16_2048> remains a black box.
+--> 
+
+
+Total memory usage is 2138696 kilobytes
+
+Number of errors   :    6 (   0 filtered)
+Number of warnings :   68 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

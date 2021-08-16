@@ -36,8 +36,8 @@ module N25Q128_CONFIG(
 	output reg						 	spi_scs_out, // chip select, S
 	output reg						 	spi_sck_out, // clock signal, C
 	output reg						 	spi_sdo_out, // data out, DQ1
-	output reg							spi_hold_out, // Hold signal, H
-	output reg							spi_wprotect_out, // Write protect signal, W
+	output wire							spi_hold_out, // Hold signal, H
+	output wire							spi_wprotect_out, // Write protect signal, W
 	input  wire						 	spi_sdi_in 	// data in, DQ0
 	
 );

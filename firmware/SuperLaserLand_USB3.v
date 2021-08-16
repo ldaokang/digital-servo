@@ -141,12 +141,12 @@ assign WireIn01 = WireIn01_AUX[15:0];
 assign WireIn02 = WireIn02_AUX[15:0];
 assign TrigIn40 = TrigIn40_AUX[15:0];
 // pad output pins
-assign WireOut20_AUX = {16{1b'0'},WireOut20};
-assign WireOut21_AUX = {16{1b'0'},WireOut21};
-assign WireOut22_AUX = {16{1b'0'},WireOut22};
-assign WireOut23_AUX = {16{1b'0'},WireOut23};
-assign WireOut24_AUX = {16{1b'0'},WireOut24};
-assign WireOut25_AUX = {16{1b'0'},WireOut25};
+assign WireOut20_AUX = {16'b0,WireOut20};
+assign WireOut21_AUX = {16'b0,WireOut21};
+assign WireOut22_AUX = {16'b0,WireOut22};
+assign WireOut23_AUX = {16'b0,WireOut23};
+assign WireOut24_AUX = {16'b0,WireOut24};
+assign WireOut25_AUX = {16'b0,WireOut25};
 
 // redundant pins
 //assign i2c_sda = 1'bz;
@@ -605,7 +605,7 @@ okTriggerIn ep40 (.okHE(okHE),                           .ep_addr(8'h40), .ep_cl
 wire        	 PipeOutA0Read;
 wire [15:0] 	 PipeOutA0DataOut;
 wire [31:0]		 PipeOutA0DataOut_AUX;
-assign PipeOutA0DataOut_AUX = {16{1b'0'},PipeOutA0DataOut};
+assign PipeOutA0DataOut_AUX = {16'b0,PipeOutA0DataOut};
 
 fifo_w16_4096_r16_4096 epA0FIFO (
 	.rst(1'b0),
@@ -625,7 +625,7 @@ okPipeOut epA0 (.okHE(okHE), .okEH(okEHx[ 6*65 +: 65 ]), .ep_addr(8'hA0), .ep_da
 wire        	 PipeOutA1Read;
 wire [15:0] 	 PipeOutA1DataOut;
 wire [31:0] 	 PipeOutA1DataOut_AUX;
-assign PipeOutA1DataOut_AUX = {16{1b'0'},PipeOutA1DataOut};
+assign PipeOutA1DataOut_AUX = {16'b0,PipeOutA1DataOut};
 fifo_w64_512_r16_2048 okPipeOut_fifo (
 	.rst(PipeOutA1Reset),
 	.wr_clk(PipeOutA1WriteClock),
